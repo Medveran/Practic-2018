@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+#include <cstdlib>
+#include <locale.h>
+
+int main() {
+	setlocale(LC_ALL, "uk_UA.UTF8");
+	int h, m, z=0;
+	char hour, minute;
+	do {
+		printf("ієї\n");
+		scanf_s("%d%d", &h, &m);
+		switch (h){
+		case 1:
+		default:z = 1;
+			break;
+		}
+	} while (z);
+	system("pause");
+	return 0;
+}
