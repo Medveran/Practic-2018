@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <string.h>
+#include <cstdlib>
+#include <locale.h>
+#define let 50
+
+int main() {
+	setlocale(LC_ALL, "rus");
+	int h, m, z = 0;
+	char hour[let], minute[let];
+	do {
+		printf("Введіть час (у 24-ому форматі):\n");
+		scanf_s("%d%d", &h, &m);
+		switch (h) {
+		case 0:strcpy(hour, "Нуль"); break;
+		case 1:strcpy(hour, "Одна"); break;
+		case 2:strcpy(hour, "Дві"); break;
+		case 3:strcpy(hour, "Три"); break;
+		case 4:strcpy(hour, "Чотири"); break;
+		case 5:strcpy(hour, "П`ять"); break;
+		case 6:strcpy(hour, "Шість"); break;
+		case 7:strcpy(hour, "Сім"); break;
+		case 8:strcpy(hour, "Вісім"); break;
+		case 9:strcpy(hour, "Дев`ять"); break;
+		case 10:strcpy(hour, "Десять"); break;
+		case 11:strcpy(hour, "Одинадцять"); break;
+		case 12:strcpy(hour, "Дванадцять"); break;
+		case 13:strcpy(hour, "Тринадцять"); break;
+		case 14:strcpy(hour, "Чотирнадцять"); break;
+		case 15:strcpy(hour, "П`ятнадцять"); break;
+		case 16:strcpy(hour, "Шістнадцять"); break;
+		case 17:strcpy(hour, "Сімнадцять"); break;
+		case 18:strcpy(hour, "Вісімнадцять"); break;
+		case 19:strcpy(hour, "Дев`ятнадцять"); break;
+		case 20:strcpy(hour, "Двадцять"); break;
+		case 21:strcpy(hour, "Двадцять один"); break;
+		case 22:strcpy(hour, "Двадцять два"); break;
+		case 23:strcpy(hour, "Двадцять три"); break;
+		default:break;
+		}
+		switch (m) {
+		case 1:strcpy(minute, ""); break;
+		default:break;
+		}
+	} while (1);
+	system("pause");
+	return 0;
+}
