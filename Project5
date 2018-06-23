@@ -1,0 +1,124 @@
+/**
+* @file Main.cpp
+* @author Белоус Н.К., гр.515и
+* @date 23 июня 2018
+* @brief Практика
+*
+* Преобразование числового времени в текст
+*/
+#include <stdio.h>
+#include <cstdlib>
+#include <locale.h>
+
+/**
+ *Проверка правильности данных
+ *
+ *@param x - кол-во часов
+ *@param y - кол-во минут
+ */
+void f(int x, int y);
+
+/**
+*Вывод часов текстом
+*
+*@param a - кол-во минут
+*/
+void hours(int);
+
+/**
+*Вывод минут текстом
+*
+*@param a - кол-во минут
+*/
+void minutes(int);
+
+int main() {
+	setlocale(LC_ALL, "rus");
+	int *h=(int *)malloc(sizeof(int)), *m = (int *)malloc(sizeof(int));
+	printf("Введiть час цiлими числами у 24-ому форматi(години i хвилини через пробiл):\n");
+	scanf_s("%d%d", h, m);
+	f(*h, *m);
+	system("pause");
+	free(h);
+	free(m);
+	return 0;
+}
+
+void f(int x, int y) {
+	if (!(x > 23 || x < 0 || y > 59 || y < 0)) {
+		hours(x);
+		minutes(y);
+	}
+	else
+		printf("!Помилка у даних!\n");
+}
+
+void hours(int a) {
+	switch (a) {
+	case 0: printf("Нуль годин"); break;
+	case 1: printf("Одна година"); break;
+	case 2: printf("Двi години"); break;
+	case 3: printf("Три години"); break;
+	case 4: printf("Чотири години"); break;
+	case 5: printf("П`ять годин"); break;
+	case 6: printf("Шiсть годин"); break;
+	case 7: printf("Сiм годин"); break;
+	case 8: printf("Вiсiм годин"); break;
+	case 9: printf("Дев`ять годин"); break;
+	case 10:printf("Десять годин"); break;
+	case 11:printf("Одинадцять годин"); break;
+	case 12:printf("Дванадцять годин"); break;
+	case 13:printf("Тринадцять годин"); break;
+	case 14:printf("Чотирнадцять годин"); break;
+	case 15:printf("П`ятнадцять годин"); break;
+	case 16:printf("Шiстнадцять годин"); break;
+	case 17:printf("Сiмнадцять годин"); break;
+	case 18:printf("Вiсiмнадцять годин"); break;
+	case 19:printf("Дев`ятнадцять годин"); break;
+	case 20:printf("Двадцять годин"); break;
+	case 21:printf("Двадцять одна година"); break;
+	case 22:printf("Двадцять двi години"); break;
+	case 23:printf("Двадцять три години"); break;
+	default:break;
+	}
+}
+
+void minutes(int a) {
+	if((a<20 && a>9)||a==0)
+		switch (a) {
+			case 0: printf(" нуль хвилин\n"); break;
+			case 10:printf(" десять хвилин\n"); break;
+			case 11:printf(" одинадцять хвилин\n"); break;
+			case 12:printf(" дванадцять хвилин\n"); break;
+			case 13:printf(" тринадцять хвилин\n"); break;
+			case 14:printf(" чотирнадцять хвилин\n"); break;
+			case 15:printf(" п`ятнадцять хвилин\n"); break;
+			case 16:printf(" шiстнадцять хвилин\n"); break;
+			case 17:printf(" сiмнадцять хвилин\n"); break;
+			case 18:printf(" вiсiмнадцять хвилин\n"); break;
+			case 19:printf(" дев`ятнадцять хвилин\n"); break;
+		default:break;
+	}
+	else {
+		switch (a / 10) {
+		case 2:printf(" двадцять"); break;
+		case 3:printf(" тридцять"); break;
+		case 4:printf(" сорок"); break;
+		case 5:printf(" п`ятдесят"); break;
+		default:break;
+		}
+		switch (a%10){
+		case 0: printf(" хвилин\n"); break;
+		case 1: printf(" одна хвилина\n"); break;
+		case 2: printf(" двi хвилини\n"); break;
+		case 3: printf(" три хвилини\n"); break;
+		case 4: printf(" чотири хвилини\n"); break;
+		case 5: printf(" п`ять хвилин\n"); break;
+		case 6: printf(" шiсть хвилин\n"); break;
+		case 7: printf(" сiм хвилин\n"); break;
+		case 8: printf(" вiсiм хвилин\n"); break;
+		case 9: printf(" дев`ять хвилин\n"); break;
+		default:break;
+		}
+	}
+}
